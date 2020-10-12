@@ -25,8 +25,38 @@ body {
 	background-color: hsl(var(--light-hue) var(--light-saturation) var(--light-power));
 }
 
-a {
+a[href] {
+	--light-hue: 250deg;
+	--light-saturation: 50%;
+	--light-power: 50%;
+
+	--color-1: hsl(calc(var(--light-hue) + 20deg) var(--light-saturation) var(--light-power));
+	--color-2: hsl(calc(var(--light-hue) - 40deg) var(--light-saturation) var(--light-power));
+
+	text-decoration: none;
 	color: aliceblue;
+
+	background-image: linear-gradient(to right, var(--color-1) 20%, var(--color-2));
+	background-size: 200% 0.4rem;
+	background-position-x: 0;
+	background-position-y: 100%;
+	background-repeat: no-repeat;
+
+	transition: .3s background-position-x ease-in-out;
+}
+
+a[href]:focus,
+a[href]:hover {
+	background-position-x: 100%;
+}
+
+a[target="_blank"]::after {
+	content: url("assets/new-tab.svg");
+	display: inline-flex;
+	align-items: center;
+	width: 1.8rem;
+	height: 1.8rem;
+	padding-left: 0.4rem;
 }
 
 .grid {
