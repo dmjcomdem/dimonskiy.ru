@@ -31,23 +31,21 @@ a {
 
 .grid {
 	display: grid;
+	place-items: center;
 	min-block-size: 100vh;
 	perspective: 100vmax;
 }
 
 @media (min-width: 769px) {
 	.grid {
-		place-items: center;
-		grid-template-columns: 1fr 35vmax;
+		grid-template-columns: 1fr 40vmax;
 	}
 }
 
 .grid__column {
 	display: grid;
-	align-items: center;
-	padding: 4rem;
+	padding: 2rem;
 }
-
 
 @media (max-width: 768px) {
 	.grid__column--content-left {
